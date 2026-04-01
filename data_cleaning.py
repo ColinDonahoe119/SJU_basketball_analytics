@@ -31,7 +31,7 @@ combined_df["is_transfer"] = (
 combined_df.loc[~combined_df["is_transfer"], "previous_team"] = pd.NA
 combined_df.loc[~combined_df["is_transfer"], "previous_conference"] = pd.NA
 
-previous_stats = ["ortg", "drtg", "ts", "usg", "porpag", "adj_oe", "adj_de", "bpm", "adj_o", "adj_d", "barthag"]
+previous_stats = ["ortg", "drtg", "ts", "usg", "porpag", "adj_oe", "adj_de", "bpm", "adj_o", "adj_d", "barthag", "oreb_rate"]
 for stat in previous_stats:
     col = "previous_team_adjo" if stat == "adj_o" else \
           "previous_team_adjd" if stat == "adj_d" else f"previous_{stat}"
@@ -49,6 +49,7 @@ combined_df["change_bpm"]       = combined_df["bpm"]     - combined_df["previous
 combined_df["change_team_adjo"] = combined_df["adj_o"]   - combined_df["previous_team_adjo"]
 combined_df["change_team_adjd"] = combined_df["adj_d"]   - combined_df["previous_team_adjd"]
 combined_df["change_barthag"]   = combined_df["barthag"] - combined_df["previous_barthag"]
+combined_df["change_oreb_rate"] = combined_df["oreb_rate"] - combined_df["previous_oreb_rate"]
 
 # --- Transfer Subsets ---
 df_transfers = combined_df[combined_df["is_transfer"] == True].copy()
