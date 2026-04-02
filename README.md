@@ -75,46 +75,11 @@ Random Forest model predicting `change_ast_to` (change in assist-to-turnover rat
 
 Both models use an 80/20 train/test split with 200 estimators, no data leakage (only pre-transfer features used).
 
-### `build_pptx.py`
-Generates `transfers_analysis.pptx` — a 13-slide presentation covering:
-1. Title slide
-2. Methodology & thresholds
-3. Category A — Elite Rebounders
-4. Category B — Elite Playmakers
-5. Category C — Two-Way Engines
-6. Winning impact comparison (charts)
-7. The stacking effect (statistical table)
-8. Player segmentation scatter map
-9. Position breakdown by category
-10. Summary & rankings
-11. Actionable recommendations
-12. oreb_rate model findings
-13. ast/to model findings
 
 ---
 
-## Requirements
 
-```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-scipy
-python-pptx
-```
 
-Install with:
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn scipy python-pptx
-```
-
----
-
-## Usage
-
-Run scripts in order:
 
 ```bash
 python transfer_category_analysis.py   # generates charts
